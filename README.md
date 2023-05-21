@@ -36,3 +36,13 @@ Our Project is Based on Cloud Computing which enables users to control their Loc
 - Inside the Frontend `/app/server/page.js` file
 - Replace the Backend Websocket Server IP and Port
 - ![image](https://github.com/Yuvaraja28/FrixCloud_Hack-SRM-4.0/assets/64340067/d10f840c-16a2-44aa-b604-50dd98645922)
+
+# Video
+- https://www.youtube.com/watch?v=8ghGxaldR8s
+
+# Showcase
+
+![Panel](https://github.com/Yuvaraja28/FrixCloud_Hack-SRM-4.0/assets/64340067/8ab7e2c9-0157-4c59-a428-f87998752b5a)
+![MainSite](https://github.com/Yuvaraja28/FrixCloud_Hack-SRM-4.0/assets/64340067/fbd2c249-fab5-49a1-8090-38a620185de8)
+
+
