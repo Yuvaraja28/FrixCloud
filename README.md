@@ -18,3 +18,21 @@ Our Project is Based on Cloud Computing which enables users to control their Loc
 - It can be hosted even on Replit to mange programs inside the replit
 - Users can run FrixCloud Program in Replit and can manage multiple programs in that single Replit.
 - So that users will not waste the Replit's resource by creating multiple Replit repo's
+
+# Setup
+**First Git clone this Repo**
+> Backend Server
+- change directory to `cd frix_cloud_server`
+- Install all the required packages by `python -m pip install -r requirements.txt`
+- Start the Backend Server with the command `python main.py` and the Websocket Server will be started
+> Frontend NextJS
+- Install the Packages by running `npm i`
+- Build the Frontend with `npm run build`
+- Run the Frontend with `npm start`
+
+# Config
+> Frontend
+- change directory to `cd frix_cloud_web`
+- Inside the Frontend `/app/server/page.js` file
+- Replace the Backend Websocket Server IP and Port
+- ![image](https://github.com/Yuvaraja28/FrixCloud_Hack-SRM-4.0/assets/64340067/d10f840c-16a2-44aa-b604-50dd98645922)
