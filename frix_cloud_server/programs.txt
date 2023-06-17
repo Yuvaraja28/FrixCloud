@@ -1,2 +1,2 @@
-java -Xmx1024M -Xms1024M -jar server.jar nogui
 python -u ./scripts/loop.py
+python -u ./scripts/a.py

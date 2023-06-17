@@ -1,4 +1,4 @@
 import time
-while True:
-    print('hello from python')
-    time.sleep(1)
+for x in range(100000):
+    print('hello from python', x)
+    time.sleep(0.1)

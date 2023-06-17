@@ -2,7 +2,7 @@ import asyncio, json, control, os
 from websockets.server import serve
 
 with open('programs.txt') as process:
-    server_instance = [control.ProcessControl(x, os.getcwd(), spawn=False) for x in process.readlines()]
+    server_instance = [control.ProcessControl(x.replace('\n', ''), os.getcwd(), spawn=False) for x in process.readlines() if x != '\n']
 
 class BackendServer:
     def __init__(self):
