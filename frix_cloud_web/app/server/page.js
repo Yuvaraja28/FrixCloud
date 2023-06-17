@@ -1,8 +1,8 @@
 'use client';
 import { styles } from './styles.scss'
 import useWebSocket from "react-use-websocket";
-import { useState, useRef, useEffect } from 'react';
-import { Inter, Quicksand, Prompt, Lexend, Roboto_Mono, Sen } from 'next/font/google'
+import { useState, useRef } from 'react';
+import { Quicksand, Prompt, Lexend, Roboto_Mono } from 'next/font/google'
 import MemoryIcon from '@mui/icons-material/Memory';
 import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import StopCircleIcon from '@mui/icons-material/StopCircle';
@@ -11,14 +11,13 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import DnsIcon from '@mui/icons-material/Dns';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 
-const inter = Inter({ subsets: ['latin'] })
 const quicksand = Quicksand({ weight: ['500', '600', '700'], subsets: ['latin'] })
 const prompt = Prompt({ weight: ['500', '600', '700', '800'], subsets: ['latin'] })
 const lexend = Lexend({ weight: ['500', '600', '700'], subsets: ['latin'] })
 const roboto_mono = Roboto_Mono({ weight: ['400', '500', '600', '700'], subsets: ['latin'] })
 
 export default function Servers() {
-  const { sendJsonMessage, getWebSocket } = useWebSocket('ws://192.168.1.40:8000', {
+  const { sendJsonMessage, getWebSocket } = useWebSocket('ws://192.168.70.213:8000', {
     onOpen: () => {console.log('WebSocket connection opened.'); sendJsonMessage({type: 'list'})},
     onClose: () => console.log('WebSocket connection closed.'),
     shouldReconnect: (closeEvent) => true,
@@ -35,7 +34,7 @@ export default function Servers() {
   const controls = [  {name: 'Start', color: '#70dc68e8', icon: <PowerSettingsNewIcon />, callback: () => {sendJsonMessage({type: 'power', command: 'start'})}},
                       {name: 'Stop', color: 'dodgerblue', icon: <StopCircleIcon />, callback: () => {sendJsonMessage({type: 'power', command: 'stop'})}}, 
                       {name: 'Restart', color: '#d6c000', icon: <RestartAltIcon />, callback: () => {sendJsonMessage({type: 'power', command: 'restart'})}}, 
-                      {name: 'Kill', color: '#d73131;', icon: <HighlightOffIcon />, callback: () => {sendJsonMessage({type: 'power', command: 'kill'})}}
+                      {name: 'Kill', color: '#d73131', icon: <HighlightOffIcon />, callback: () => {sendJsonMessage({type: 'power', command: 'kill'})}}
                     ]
   function SendCommand(event) {
     sendJsonMessage({type: 'console_command', command: command_input.current.value})
@@ -68,7 +67,7 @@ export default function Servers() {
           <span className={['system-stats-header', prompt.className].join(' ')}>Stats</span>
           <div className={'system-resources'}>
             <div className={'system-resources-container'}>
-              <span className={['system-resources-title', prompt.className].join(' ')}><DnsIcon />Server</span>
+              <span className={['system-resources-title', prompt.className].join(' ')}><DnsIcon />Program</span>
               <span className={['system-resources-value', quicksand.className].join(' ')}>{currentProgram}</span>         
             </div>
             <div className={'system-resources-container'}>
@@ -77,7 +76,7 @@ export default function Servers() {
             </div>
             <div className={'system-resources-container'}>
               <span className={['system-resources-title', prompt.className].join(' ')}><MemoryIcon />CPU</span>
-              <span className={['system-resources-value', quicksand.className].join(' ')}>{cpuUsage} / 100 %</span>         
+              <span className={['system-resources-value', quicksand.className].join(' ')}>{cpuUsage} % / 100 %</span>         
             </div>
             <div className={'system-resources-container'}>
               <span className={['system-resources-title', prompt.className].join(' ')}><MemoryIcon /> RAM</span>

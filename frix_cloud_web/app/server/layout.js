@@ -1,10 +1,8 @@
 import { styles } from './styles.scss'
 import Image from 'next/image'
-import { Inter, Quicksand, Prompt, Lexend } from 'next/font/google'
+import { Inter, Lexend } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
-const quicksand = Quicksand({ weight: ['700'], subsets: ['latin'] })
-const prompt = Prompt({ weight: ['700'], subsets: ['latin'] })
 const lexend = Lexend({ weight: ['700'], subsets: ['latin'] })
 
 export const metadata = {
